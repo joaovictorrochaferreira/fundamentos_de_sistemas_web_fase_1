@@ -1,0 +1,194 @@
+/* estilos.css */
+
+/* === ESTILOS GLOBAIS === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define uma família de fontes padrão para todo o corpo do documento, priorizando fontes sans-serif limpas e modernas. */
+    background-color: #F5F5DC; /* Define a cor de fundo principal da página para um tom bege claro (F5F5DC). */
+    color: #333333; /* Define a cor padrão do texto para um cinza escuro (#333333), proporcionando bom contraste com o fundo claro. */
+}
+
+hr {
+    border-top: 1px solid #d2b285; /* Estiliza as linhas horizontais (<hr>) com uma borda superior sólida na cor bege/areia (#d2b285). */
+}
+
+main.container {
+    padding-top: 20px; /* Adiciona um espaçamento interno no topo do elemento <main> com a classe 'container'. */
+    padding-bottom: 40px; /* Adiciona um espaçamento interno na base do elemento <main> com a classe 'container'. */
+}
+
+/* === ESTILIZAÇÃO DE TÍTULOS === */
+h1, h2, h3 {
+    color: #3a5334; /* Define a cor dos títulos h1, h2 e h3 para o verde escuro da paleta (#3a5334). */
+}
+
+main h2 { /* Estilo específico para os títulos h2 dentro do elemento <main> */
+    border-bottom: 2px solid #3a5334; /* Adiciona uma linha sólida verde escura abaixo dos títulos h2. */
+    padding-bottom: 10px; /* Espaçamento interno abaixo da linha do título. */
+    margin-bottom: 30px; /* Margem inferior maior para separar o título do conteúdo subsequente. */
+}
+
+/* === ESTILIZAÇÃO DA BARRA DE NAVEGAÇÃO (HEADER) === */
+.navbar { /* Seleciona a classe principal da barra de navegação do Bootstrap. */
+    background-color: #3a5334 !important; /* Define a cor de fundo da navbar para verde escuro. '!important' é usado para garantir prioridade sobre estilos padrão do Bootstrap. */
+}
+
+.navbar .navbar-brand, /* Seleciona o elemento da marca/logo na navbar. */
+.navbar .nav-link { /* Seleciona os links de navegação dentro da navbar. */
+    color: #F5F5DC !important; /* Define a cor do texto da marca e dos links para bege claro, contrastando com o fundo verde. */
+}
+
+.navbar .nav-link:hover, /* Estilo para quando o mouse passa sobre um link de navegação. */
+.navbar .navbar-brand:hover { /* Estilo para quando o mouse passa sobre a marca/logo. */
+    color: #d2b285 !important; /* Altera a cor do texto para o tom bege/areia (#d2b285) no hover. */
+}
+
+.navbar .nav-link.active { /* Estilo para o link de navegação da página atualmente ativa. */
+    font-weight: bold; /* Torna o texto do link ativo em negrito. */
+    color: #FFFFFF !important; /* Define a cor do link ativo para branco, para maior destaque. */
+}
+
+/* === ESTILIZAÇÃO DOS CARDS DE PRODUTO/SERVIÇO === */
+.card {
+    border: 1px solid #d2b285; /* Define uma borda sólida na cor bege/areia para os cards. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adiciona uma sombra sutil para dar profundidade aos cards. */
+    transition: transform .2s; /* Define uma transição suave para a propriedade 'transform' com duração de 0.2 segundos. */
+}
+
+.card:hover {
+    transform: scale(1.03); /* Aplica um leve efeito de zoom (escala de 103%) quando o mouse passa sobre o card. */
+}
+
+.card-title {
+    color: #3a5334; /* Define a cor do título dentro do card para verde escuro. */
+}
+
+.card-img-top {
+    border-bottom: 1px solid #eee; /* Adiciona uma linha divisória sutil abaixo da imagem no topo do card. */
+}
+
+.card-text strong { /* Estiliza o texto em negrito (usado para "Valor:") dentro do texto do card. */
+    color: #5C4033; /* Define a cor do texto em negrito para marrom escuro. */
+}
+
+/* Estilo para preços promocionais */
+.preco-promocional {
+    color: red; /* Define a cor do texto para vermelho, para destacar o preço promocional. */
+    font-weight: bold; /* Torna o preço promocional em negrito. */
+    font-size: 1.1em; /* Aumenta ligeiramente o tamanho da fonte do preço promocional. */
+    margin-left: 5px; /* Adiciona um pequeno espaçamento à esquerda do preço promocional. */
+}
+
+/* Estilo para o preço original tachado */
+del {
+    color: #777; /* Define a cor do texto tachado para cinza, para dar menos ênfase. */
+    font-size: 0.9em; /* Reduz ligeiramente o tamanho da fonte do texto tachado. */
+}
+
+/* === ESTILIZAÇÃO DO CARROSSEL DE IMAGENS === */
+#meuCarrossel .carousel-item img {
+    max-height: 400px; /* Define uma altura máxima para as imagens dentro do carrossel. */
+    object-fit: cover; /* Faz com que a imagem cubra a área do item do carrossel, mantendo a proporção e cortando o excesso se necessário. */
+    width: 100%; /* Garante que a imagem ocupe 100% da largura do item do carrossel. */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente às legendas do carrossel para melhor legibilidade. */
+    border-radius: .25rem; /* Adiciona bordas arredondadas às legendas. */
+    padding: 1rem; /* Adiciona espaçamento interno às legendas. */
+}
+
+/* === ESTILIZAÇÃO DE BOTÕES CUSTOMIZADOS === */
+.btn-accent { /* Classe customizada para botões de destaque/acento. */
+    background-color: #CC5500; /* Define a cor de fundo para laranja queimado. */
+    border-color: #b34a00;    /* Define a cor da borda para um tom mais escuro de laranja queimado. */
+    color: white;             /* Define a cor do texto para branco. */
+}
+
+.btn-accent:hover { /* Estilo para quando o mouse passa sobre o botão .btn-accent. */
+    background-color: #b34a00;    /* Escurece a cor de fundo no hover. */
+    border-color: #993f00;      /* Escurece a cor da borda no hover. */
+    color: white;
+}
+
+/* === ESTILIZAÇÃO DOS FORMULÁRIOS (CADASTRO E AGENDAMENTO) === */
+#formCadastroCliente fieldset,
+#formAgendamento fieldset { /* Aplica estilos aos fieldsets de ambos os formulários */
+    border: 1px solid #d2b285; /* Borda sutil na cor bege/areia. */
+    padding: 20px; /* Espaçamento interno. */
+    border-radius: 5px; /* Bordas arredondadas. */
+}
+
+#formCadastroCliente legend,
+#formAgendamento legend { /* Aplica estilos às legendas dos fieldsets */
+    font-size: 1.25rem; /* Tamanho da fonte da legenda. */
+    color: #3a5334; /* Cor verde escura para a legenda. */
+    padding-bottom: 5px; /* Espaçamento abaixo da legenda. */
+    margin-bottom: 15px; /* Margem abaixo da legenda. */
+    width: auto; /* Ajusta a largura da legenda para o conteúdo. */
+    padding-left: 5px; /* Espaçamento interno à esquerda. */
+    padding-right: 5px; /* Espaçamento interno à direita. */
+}
+
+#agendamentoServicos { /* Estilos específicos para a seção de agendamento na página de serviços. */
+    background-color: #ffffff; /* Fundo branco para destacar a seção. */
+    padding: 30px; /* Espaçamento interno. */
+    border-radius: 8px; /* Bordas arredondadas. */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.075); /* Sombra sutil. */
+    margin-top: 30px; /* Margem no topo da seção. */
+}
+
+#agendamentoServicos h3 { /* Estilo para o título h3 dentro da seção de agendamento. */
+    border-bottom: none; /* Remove a linha inferior, se houver herança de 'main h2'. */
+    margin-bottom: 20px; /* Margem inferior. */
+}
+
+/* === ESTILOS DE FOCO PARA ACESSIBILIDADE === */
+/* Melhora o indicador visual para elementos focáveis (links, botões, inputs, etc.) */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #CC5500; /* Adiciona um contorno laranja queimado ao focar. */
+    outline-offset: 2px; /* Pequeno espaçamento entre o elemento e o contorno. */
+    box-shadow: 0 0 0 3px rgba(204, 85, 0, 0.25); /* Adiciona uma sombra suave para maior destaque do foco. */
+}
+
+/* Ajusta o foco para controles de formulário Bootstrap para usar a cor de acento. */
+.form-control:focus {
+    border-color: #CC5500; /* Cor da borda do campo quando focado. */
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25); /* Sombra de foco usando a cor de acento. */
+}
+
+.form-check-input:focus {
+    border-color: #CC5500;
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25);
+}
+
+.form-select:focus {
+    border-color: #CC5500;
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.25);
+}
+
+.btn:focus { /* Estilo de foco específico para botões Bootstrap. */
+    box-shadow: 0 0 0 0.25rem rgba(204, 85, 0, 0.5); /* Sombra mais forte para botões focados. */
+}
+
+/* === ESTILIZAÇÃO DO RODAPÉ (FOOTER) === */
+footer {
+    background-color: #d2b285; /* Define a cor de fundo do rodapé para bege/areia. */
+    color: #3a5334; /* Define a cor do texto no rodapé para verde escuro. */
+    padding: 20px 0; /* Espaçamento interno vertical. */
+    text-align: center; /* Centraliza o texto no rodapé. */
+    margin-top: 40px; /* Adiciona uma margem no topo do rodapé para separá-lo do conteúdo principal. */
+}
+
+footer a {
+    color: #3a5334; /* Cor dos links no rodapé. */
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+}
+
+footer a:hover {
+    color: #5C4033; /* Cor dos links no rodapé ao passar o mouse (marrom escuro). */
+    text-decoration: underline; /* Adiciona sublinhado no hover. */
+}

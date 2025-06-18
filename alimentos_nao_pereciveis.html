@@ -1,46 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português Brasileiro -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimercado Raízes do Sul - Alimentos Não Perecíveis</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8, suportando acentuação e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>Minimercado Raízes do Sul - Alimentos Não Perecíveis</title> <!-- Título da página exibido na aba do navegador -->
+
+    <!-- Link para o CSS do Bootstrap (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Nosso arquivo CSS customizado (VEM DEPOIS do Bootstrap para sobrescrever ou adicionar estilos) -->
+    <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
-    <!-- Cabeçalho será o mesmo para todas as páginas -->
+    <!-- Início do Cabeçalho da Página -->
     <header>
-        <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="100">
-        <h1>Minimercado Raízes do Sul</h1>
-        <nav>
-            <a href="index.html">Início</a> |
-            <a href="frutas_verduras.html">Frutas e Verduras</a> |
-            <a href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a> |
-            <a href="higiene_limpeza.html">Higiene e Limpeza</a> |
-            <a href="servicos.html">Serviços</a>
+        <!-- Barra de Navegação Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Logo e Nome do Minimercado (Link para a página inicial) -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="60" height="auto" class="d-inline-block align-text-top">
+                    Minimercado Raízes do Sul
+                </a>
+                <!-- Botão Toggler para menu responsivo em telas pequenas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Itens do Menu de Navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha os itens à direita -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a> <!-- Link 'active' está na index.html -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="frutas_verduras.html">Frutas e Verduras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a> <!-- 'active' marca a página atual -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="higiene_limpeza.html">Higiene e Limpeza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicos.html">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="cadastro.html">Cadastro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <hr>
     </header>
+    <!-- Fim do Cabeçalho da Página -->
 
-    <main>
-        <h2>Alimentos Não Perecíveis</h2>
-            <p>Itens essenciais para sua despensa, com a qualidade que você confia.</p>
+    <!-- Início do Conteúdo Principal da Página -->
+    <main class="container mt-4"> <!-- Container Bootstrap para layout e margem no topo -->
+        <h2 class="mb-3">Alimentos Não Perecíveis</h2> <!-- Título da seção com margem inferior -->
+        <p>Itens essenciais para sua despensa, com a qualidade que você confia.</p>
+        
+        <!-- Linha para organizar os produtos em colunas -->
+        <div class="row"> 
+            
+            <!-- Início do Card do Produto 1 -->
+            <div class="col-md-6 mb-4"> <!-- Coluna Bootstrap: ocupa metade da largura em telas médias/grandes, com margem inferior -->
+                <div class="card"> <!-- Componente Card do Bootstrap -->
+                    <img src="imagens/arroz.png" class="card-img-top" alt="Pacote de Arroz Branco de 5kg" style="height: 200px; object-fit: scale-down;"> <!-- Imagem do produto. 'object-fit: scale-down' garante que a imagem caiba sem cortar, mantendo proporção -->
+                    <div class="card-body"> <!-- Corpo do card -->
+                        <h5 class="card-title">Arroz Branco</h5> <!-- Título do produto -->
+                        <p class="card-text">Arroz branco agulhinha, tipo 1, pacote de 5kg. Soltinho e saboroso.</p> <!-- Descrição do produto -->
+                        <p class="card-text"><strong>Valor: R$ 22,90</strong></p> <!-- Preço do produto -->
+                        <a href="#" class="btn btn-accent">Adicionar ao Carrinho (Fictício)</a> <!-- Botão de ação (fictício para esta fase) -->
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Card do Produto 1 -->
 
-            <section>
-                <h3>Arroz Branco Tipo 1</h3>
-                <img src="imagens/arroz.png" alt="Pacote de Arroz Branco" width="200"> <!-- Ajuste o nome da imagem e o width se necessário -->
-                <p>Descrição: Arroz branco agulhinha, tipo 1, pacote de 5kg. Soltinho e saboroso.</p>
-                <p>Valor: R$ 22,90</p>
-            </section>
-            <hr>
-            <section>
-                <h3>Feijão Carioca</h3>
-                <img src="imagens/feijao.png" alt="Pacote de Feijão Carioca" width="200"> <!-- Ajuste o nome da imagem e o width se necessário -->
-                <p>Descrição: Feijão carioca de alta qualidade, pacote de 1kg. Caldo encorpado e saboroso.</p>
-                <p>Valor: R$ 8,75</p>
-            </section>
+            <!-- Início do Card do Produto 2 -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagens/feijao.png" class="card-img-top" alt="Pacote de Feijão Carioca de 1kg" style="height: 200px; object-fit: scale-down;">
+                    <div class="card-body">
+                        <h5 class="card-title">Feijão Carioca</h5>
+                        <p class="card-text">Feijão carioca, pacote de 1kg. Caldo encorpado e saboroso.</p>
+                        <p class="card-text"><strong>Valor: R$ 8,75</strong></p>
+                        <a href="#" class="btn btn-accent">Adicionar ao Carrinho (Fictício)</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Card do Produto 2 -->
+
+            <!-- Adicione mais produtos aqui se precisar, seguindo a estrutura col-md-6 -->
+
+        </div> <!-- Fecha a div.row -->
     </main>
+    <!-- Fim do Conteúdo Principal da Página -->
 
-    <!-- Rodapé será o mesmo para todas as páginas -->
+    <!-- Linha divisória antes do rodapé -->
     <hr>
+
+    <!-- Início do Rodapé da Página -->
     <footer>
         <p>© 1996 Minimercado Raízes do Sul. Todos os direitos reservados.</p>
         <p>Desenvolvido por: João Victor Rocha Ferreira - Matrícula: 24150418-2</p>
@@ -51,5 +110,9 @@
             <a href="#privacidade">Política de Privacidade (Fictício)</a>
         </nav>
     </footer>
+    <!-- Fim do Rodapé da Página -->
+
+    <!-- Scripts JavaScript do Bootstrap (via CDN) - Colocar antes de fechar o </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,45 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português Brasileiro -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimercado Raízes do Sul - Página Inicial</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>Minimercado Raízes do Sul - Página Inicial</title> <!-- Título da página principal -->
+
+    <!-- Link para o CSS do Bootstrap (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Nosso arquivo CSS customizado (carregado após o Bootstrap para permitir sobrescritas) -->
+    <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
-    <!-- Cabeçalho será o mesmo para todas as páginas -->
+    <!-- Início do Cabeçalho da Página -->
     <header>
-        <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="100">
-        <h1>Minimercado Raízes do Sul</h1>
-        <nav>
-            <a href="index.html">Início</a> |
-            <a href="frutas_verduras.html">Frutas e Verduras</a> |
-            <a href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a> |
-            <a href="higiene_limpeza.html">Higiene e Limpeza</a> |
-            <a href="servicos.html">Serviços</a>
+        <!-- Barra de Navegação Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- Classes Bootstrap para a barra de navegação -->
+            <div class="container-fluid">
+                <!-- Logo e Nome do Minimercado (Link para a página inicial) -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="60" height="auto" class="d-inline-block align-text-top">
+                    Minimercado Raízes do Sul
+                </a>
+                <!-- Botão Toggler para menu responsivo em telas pequenas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Itens do Menu de Navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha os itens à direita -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Início</a> <!-- Link ativo para a página atual -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="frutas_verduras.html">Frutas e Verduras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="higiene_limpeza.html">Higiene e Limpeza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicos.html">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="cadastro.html">Cadastro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <hr>
     </header>
+    <!-- Fim do Cabeçalho da Página -->
 
-    <main>
+    <!-- MENSAGEM DE BOAS-VINDAS TEMPORÁRIA (controlada por JavaScript) -->
+    <div id="mensagemBoasVindas" class="alert alert-info text-center mt-3" role="alert" style="display: none;"> <!-- 'display: none;' para iniciar oculta -->
+        🎉 Bem-vindo ao Minimercado Raízes do Sul! Aproveite nossas ofertas! 🎉
+    </div>
+    <!-- FIM DA MENSAGEM DE BOAS-VINDAS -->
+
+    <!-- Início do Conteúdo Principal da Página Inicial -->
+    <main class="container mt-4">
         <h2>Bem-vindo ao Minimercado Raízes do Sul!</h2>
-            <p>Sua melhor opção para produtos frescos e de qualidade no bairro. Navegue pelas nossas categorias e conheça nossos serviços.</p>
+        <p>Sua melhor opção para produtos frescos e de qualidade no bairro. Navegue pelas nossas categorias e conheça nossos serviços.</p>
 
-            <h3>Nossos Produtos</h3>
-            <ul>
-                <li><a href="frutas_verduras.html">Frutas e Verduras Fresquinhas</a></li>
-                <li><a href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis Essenciais</a></li>
-                <li><a href="higiene_limpeza.html">Produtos de Higiene e Limpeza</a></li>
-            </ul>
+        <!-- CARROSSEL DE IMAGENS INÍCIO -->
+        <div id="meuCarrossel" class="carousel slide mb-4" data-bs-ride="carousel"> <!-- Componente Carrossel Bootstrap, com auto-play -->
+            <!-- Indicadores do Carrossel (pequenos traços/bolinhas na parte inferior) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#meuCarrossel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Slides do Carrossel -->
+            <div class="carousel-inner">
+                <!-- Primeiro Slide (ativo por padrão) -->
+                <div class="carousel-item active">
+                    <img src="imagens/melancia_promo.png" class="d-block w-100" alt="Promoção de Melancia"> <!-- Imagem do slide -->
+                    <div class="carousel-caption d-none d-md-block"> <!-- Legenda do slide (visível em telas médias e maiores) -->
+                        <h5>Oferta Imperdível!</h5>
+                        <p>Melancia suculenta por apenas R$ 5,00/kg!</p>
+                    </div>
+                </div>
+                <!-- Segundo Slide -->
+                <div class="carousel-item">
+                    <img src="imagens/sempre_fresco_banner.png" class="d-block w-100" alt="Banner de frutas e verduras fresquinhas">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Sempre Fresquinho para Você</h5>
+                        <p>As melhores frutas e verduras da estação direto para sua mesa.</p>
+                    </div>
+                </div>
+                <!-- Terceiro Slide -->
+                <div class="carousel-item">
+                    <img src="imagens/tele_entrega_banner.png" class="d-block w-100" alt="Banner do serviço de tele-entrega">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Comodidade na Sua Porta</h5>
+                        <p>Experimente nosso serviço de tele-entrega rápido e eficiente!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Controles de Navegação (Anterior/Próximo) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#meuCarrossel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span> <!-- Texto para leitores de tela -->
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#meuCarrossel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span> <!-- Texto para leitores de tela -->
+            </button>
+        </div>
+        <!-- CARROSSEL DE IMAGENS FIM -->
+        
+        <!-- Seção de Links para Categorias de Produtos -->
+        <h3 class="mt-4">Nossos Produtos</h3>
+        <ul>
+            <li><a href="frutas_verduras.html">Frutas e Verduras Fresquinhas</a></li>
+            <li><a href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis Essenciais</a></li>
+            <li><a href="higiene_limpeza.html">Produtos de Higiene e Limpeza</a></li>
+        </ul>
 
-            <h3>Nossos Serviços</h3>
-            <ul>
-                <li><a href="servicos.html">Conheça nossos serviços de Retirada e Tele-entrega</a></li>
-            </ul>
-
+        <!-- Seção de Links para Serviços -->
+        <h3 class="mt-4">Nossos Serviços</h3>
+        <ul>
+            <li><a href="servicos.html">Conheça nossos serviços de Retirada e Tele-entrega</a></li>
+        </ul>
     </main>
+    <!-- Fim do Conteúdo Principal da Página Inicial -->
 
-    <!-- Rodapé será o mesmo para todas as páginas -->
+    <!-- Linha divisória antes do rodapé -->
     <hr>
+
+    <!-- Início do Rodapé da Página -->
     <footer>
         <p>© 1996 Minimercado Raízes do Sul. Todos os direitos reservados.</p>
         <p>Desenvolvido por: João Victor Rocha Ferreira - Matrícula: 24150418-2</p>
@@ -50,5 +142,12 @@
             <a href="#privacidade">Política de Privacidade (Fictício)</a>
         </nav>
     </footer>
+    <!-- Fim do Rodapé da Página -->
+
+    <!-- Scripts JavaScript do Bootstrap (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <!-- Nosso arquivo JavaScript customizado -->
+    <script src="scripts.js"></script> 
 </body>
 </html>

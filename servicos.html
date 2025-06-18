@@ -1,44 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português Brasileiro -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimercado Raízes do Sul - Nossos Serviços</title>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para responsividade -->
+    <title>Minimercado Raízes do Sul - Nossos Serviços e Agendamento</title> <!-- Título específico da página -->
+
+    <!-- Link para o CSS do Bootstrap (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Nosso arquivo CSS customizado -->
+    <link rel="stylesheet" href="estilos.css"> 
 </head>
 <body>
-    <!-- Cabeçalho será o mesmo para todas as páginas -->
+    <!-- Início do Cabeçalho da Página -->
     <header>
-        <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="100">
-        <h1>Minimercado Raízes do Sul</h1>
-        <nav>
-            <a href="index.html">Início</a> |
-            <a href="frutas_verduras.html">Frutas e Verduras</a> |
-            <a href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a> |
-            <a href="higiene_limpeza.html">Higiene e Limpeza</a> |
-            <a href="servicos.html">Serviços</a>
+        <!-- Barra de Navegação Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Logo e Nome do Minimercado -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="60" height="auto" class="d-inline-block align-text-top">
+                    Minimercado Raízes do Sul
+                </a>
+                <!-- Botão Toggler para menu responsivo -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Itens do Menu de Navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="frutas_verduras.html">Frutas e Verduras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="higiene_limpeza.html">Higiene e Limpeza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="servicos.html">Serviços</a> <!-- Link ativo para a página atual -->
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" href="cadastro.html">Cadastro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <hr>
     </header>
+    <!-- Fim do Cabeçalho da Página -->
 
-    <main>
-        <h2>Nossos Serviços</h2>
-            <p>Facilidades pensadas para o seu dia a dia.</p>
+    <!-- Início do Conteúdo Principal da Página de Serviços -->
+    <main class="container mt-4">
+        <h2 class="mb-3">Nossos Serviços</h2> <!-- Título da seção -->
+        <p class="mb-4">Facilidades pensadas para o seu dia a dia. Escolha um serviço e agende abaixo!</p>
 
-            <section>
-                <h3>Retirada no Local</h3>
-                <p>Descrição: Faça suas compras online e retire diretamente em nosso minimercado no horário agendado. Praticidade e rapidez para você!</p>
-                <p>Valor: Gratuito</p>
-            </section>
-            <hr>
-            <section>
-                <h3>Tele-entrega</h3>
-                <p>Descrição: Receba suas compras no conforto da sua casa. Consulte as áreas de cobertura e taxas.</p>
-                <p>Valor: A partir de R$ 10,00 (varia conforme a distância)</p>
-            </section>
+        <!-- Linha para apresentar os serviços em cards -->
+        <div class="row">
+            <!-- Card do Serviço: Retirada no Local -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagens/retira_local.png" class="card-img-top" alt="Ilustração de pessoa retirando compras no balcão" style="height: 200px; object-fit: scale-down;">
+                    <div class="card-body">
+                        <h5 class="card-title">Retirada no Local</h5>
+                        <p class="card-text">Faça suas compras online e retire diretamente em nosso minimercado no horário agendado. Praticidade e rapidez para você!</p>
+                        <p class="card-text"><strong>Valor: Gratuito</strong></p>
+                        <!-- Botão fictício, funcionalidade de seleção real seria com JavaScript -->
+                        <a href="#formAgendamento" class="btn btn-accent">Agendar Retirada</a> 
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Card do Serviço: Retirada no Local -->
+
+            <!-- Card do Serviço: Tele-entrega -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="imagens/tele_entrega.png" class="card-img-top" alt="Ilustração de motoboy realizando entrega" style="height: 200px; object-fit: scale-down;">
+                    <div class="card-body">
+                        <h5 class="card-title">Tele-entrega</h5>
+                        <p class="card-text">Receba suas compras no conforto da sua casa. Consulte as áreas de cobertura e taxas.</p>
+                        <p class="card-text"><strong>Valor: A partir de R$ 10,00</strong> (varia conforme a distância)</p>
+                        <!-- Botão fictício -->
+                        <a href="#formAgendamento" class="btn btn-accent">Agendar Tele-entrega</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Card do Serviço: Tele-entrega -->
+        </div> <!-- Fecha a div.row dos cards de serviço -->
+
+        <!-- Linha divisória com margem vertical -->
+        <hr class="my-4"> 
+
+        <!-- Seção de Agendamento de Serviços -->
+        <section id="agendamentoServicos">
+            <h3 class="mb-3">Agende seu Serviço</h3>
+            <!-- Formulário de Agendamento -->
+            <form id="formAgendamento">
+                <!-- Campo: Escolha do tipo de serviço -->
+                <div class="mb-3">
+                    <label for="tipoServico" class="form-label">Escolha o tipo de serviço:</label>
+                    <select class="form-select" id="tipoServico" name="tipoServico" required>
+                        <option selected disabled value="">Selecione...</option>
+                        <option value="retirada">Retirada no Local</option>
+                        <option value="teleentrega">Tele-entrega</option>
+                    </select>
+                </div>
+
+                <!-- Linha para Data e Horário -->
+                <div class="row">
+                    <!-- Campo: Escolha da data -->
+                    <div class="col-md-6 mb-3">
+                        <label for="dataAgendamento" class="form-label">Escolha a data:</label>
+                        <input type="date" class="form-control" id="dataAgendamento" name="dataAgendamento" required>
+                    </div>
+                    <!-- Campo: Escolha do horário -->
+                    <div class="col-md-6 mb-3">
+                        <label for="horaAgendamento" class="form-label">Escolha o horário:</label>
+                        <input type="time" class="form-control" id="horaAgendamento" name="horaAgendamento" required min="09:00" max="18:00">
+                        <small class="form-text text-muted">Horários disponíveis: 09:00 às 18:00.</small> <!-- Texto de ajuda para o horário -->
+                    </div>
+                </div>
+                
+                <!-- Campo: Observações -->
+                <div class="mb-3">
+                    <label for="observacoes" class="form-label">Observações (opcional):</label>
+                    <textarea class="form-control" id="observacoes" name="observacoes" rows="3" placeholder="Alguma instrução especial para seu pedido?"></textarea>
+                </div>
+
+                <!-- Botão de Submissão do Formulário -->
+                <button type="submit" class="btn btn-accent btn-lg">Confirmar Agendamento</button>
+            </form>
+        </section>
+        <!-- Fim da Seção de Agendamento -->
     </main>
+    <!-- Fim do Conteúdo Principal da Página de Serviços -->
 
-    <!-- Rodapé será o mesmo para todas as páginas -->
+    <!-- Linha divisória antes do rodapé -->
     <hr>
+
+    <!-- Início do Rodapé da Página -->
     <footer>
         <p>© 1996 Minimercado Raízes do Sul. Todos os direitos reservados.</p>
         <p>Desenvolvido por: João Victor Rocha Ferreira - Matrícula: 24150418-2</p>
@@ -49,5 +153,9 @@
             <a href="#privacidade">Política de Privacidade (Fictício)</a>
         </nav>
     </footer>
+    <!-- Fim do Rodapé da Página -->
+
+    <!-- Scripts JavaScript do Bootstrap (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

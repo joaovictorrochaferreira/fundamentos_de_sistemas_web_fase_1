@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português Brasileiro -->
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8, suportando acentuação e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para responsividade em dispositivos móveis -->
+    <title>Minimercado Raízes do Sul - Cadastro de Cliente</title> <!-- Título da página exibido na aba do navegador -->
+    
+    <!-- Link para o CSS do Bootstrap (via CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Nosso arquivo CSS customizado (VEM DEPOIS do Bootstrap para sobrescrever ou adicionar estilos) -->
+    <link rel="stylesheet" href="estilos.css"> 
+</head>
+<body>
+    <!-- Início do Cabeçalho da Página -->
+    <header>
+        <!-- Barra de Navegação Bootstrap -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- Classes Bootstrap para a barra de navegação -->
+            <div class="container-fluid">
+                <!-- Logo e Nome do Minimercado (Link para a página inicial) -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="imagens/logo.png" alt="Logo Minimercado Raízes do Sul" width="60" height="auto" class="d-inline-block align-text-top">
+                    Minimercado Raízes do Sul
+                </a>
+                <!-- Botão Toggler para menu responsivo em telas pequenas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Itens do Menu de Navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto"> <!-- ms-auto alinha os itens à direita -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="frutas_verduras.html">Frutas e Verduras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alimentos_nao_pereciveis.html">Alimentos Não Perecíveis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="higiene_limpeza.html">Higiene e Limpeza</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicos.html">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="cadastro.html">Cadastro</a> <!-- 'active' marca esta como a página atual -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Fim do Cabeçalho da Página -->
+
+    <!-- Início do Conteúdo Principal da Página de Cadastro -->
+    <main class="container mt-4"> <!-- Container Bootstrap para layout e margem no topo -->
+        <h2 class="mb-4">Cadastro de Novo Cliente</h2> <!-- Título da página de cadastro -->
+        <p class="mb-4">Preencha os campos abaixo para criar sua conta em nosso minimercado.</p>
+
+        <!-- Início do Formulário de Cadastro -->
+        <form id="formCadastroCliente">
+            <!-- Seção: Dados Pessoais -->
+            <fieldset class="mb-3">
+                <legend class="h5">Dados Pessoais</legend>
+                <!-- Campo: Nome Completo -->
+                <div class="mb-3">
+                    <label for="nomeCompleto" class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required>
+                </div>
+                <!-- Linha para CPF e Sexo -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cpf" class="form-label">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}">
+                        <!-- Atributo 'pattern' sugere uma validação básica de formato de CPF (não substitui validação completa) -->
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Sexo:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoMasculino" value="masculino" required>
+                            <label class="form-check-label" for="sexoMasculino">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" value="feminino">
+                            <label class="form-check-label" for="sexoFeminino">Feminino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoOutro" value="outro">
+                            <label class="form-check-label" for="sexoOutro">Outro</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Fim da Seção: Dados Pessoais -->
+
+            <!-- Seção: Contato -->
+            <fieldset class="mb-3">
+                <legend class="h5">Contato</legend>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="telefone" class="form-label">Telefone:</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Fim da Seção: Contato -->
+
+            <!-- Seção: Endereço -->
+            <fieldset class="mb-3">
+                <legend class="h5">Endereço</legend>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="cep" class="form-label">CEP:</label>
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" required>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="logradouro" class="form-label">Logradouro (Rua, Av.):</label>
+                        <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Nome da sua rua/avenida" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="numero" class="form-label">Número:</label>
+                        <input type="text" class="form-control" id="numero" name="numero" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="complemento" class="form-label">Complemento:</label>
+                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apto, Bloco, Casa">
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label for="bairro" class="form-label">Bairro:</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cidade" class="form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="estado" class="form-label">Estado:</label>
+                        <select id="estado" name="estado" class="form-select" required>
+                            <option value="AC">Acre (AC)</option>
+                            <option value="AL">Alagoas (AL)</option>
+                            <option value="AP">Amapá (AP)</option>
+                            <option value="AM">Amazonas (AM)</option>
+                            <option value="BA">Bahia (BA)</option>
+                            <option value="CE">Ceará (CE)</option>
+                            <option value="DF">Distrito Federal (DF)</option>
+                            <option value="ES">Espírito Santo (ES)</option>
+                            <option value="GO">Goiás (GO)</option>
+                            <option value="MA">Maranhão (MA)</option>
+                            <option value="MT">Mato Grosso (MT)</option>
+                            <option value="MS">Mato Grosso do Sul (MS)</option>
+                            <option value="MG">Minas Gerais (MG)</option>
+                            <option value="PA">Pará (PA)</option>
+                            <option value="PB">Paraíba (PB)</option>
+                            <option value="PR">Paraná (PR)</option>
+                            <option value="PE">Pernambuco (PE)</option>
+                            <option value="PI">Piauí (PI)</option>
+                            <option value="RJ">Rio de Janeiro (RJ)</option>
+                            <option value="RN">Rio Grande do Norte (RN)</option>
+                            <option value="RS">Rio Grande do Sul (RS)</option>
+                            <option value="RO">Rondônia (RO)</option>
+                            <option value="RR">Roraima (RR)</option>
+                            <option value="SC">Santa Catarina (SC)</option>
+                            <option value="SP">São Paulo (SP)</option>
+                            <option value="SE">Sergipe (SE)</option>
+                            <option value="TO">Tocantins (TO)</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Fim da Seção: Endereço -->
+
+            <!-- Seção: Termos e Botão de Envio -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="aceiteTermos" name="aceiteTermos" required>
+                <label class="form-check-label" for="aceiteTermos">Li e aceito os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a> (fictícios).</label>
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-lg">Cadastrar</button> <!-- Botão principal para submeter o formulário -->
+        </form>
+        <!-- Fim do Formulário de Cadastro -->
+    </main>
+    <!-- Fim do Conteúdo Principal da Página de Cadastro -->
+
+    <!-- Linha divisória antes do rodapé -->
+    <hr>
+
+    <!-- Início do Rodapé da Página -->
+    <footer>
+        <p>© 2023 Minimercado Raízes do Sul. Todos os direitos reservados.</p>
+        <p>Desenvolvido por: João Victor Rocha Ferreira - Matrícula: 24150418-2</p> <!-- SUBSTITUA COM SEUS DADOS -->
+        <p>Contato do Minimercado: (51) 3024-8144 | adm@raizesdosul.com.br</p> <!-- Dados fictícios -->
+        <nav>
+            <a href="index.html">Início</a> |
+            <a href="#termos">Termos de Serviço (Fictício)</a> |
+            <a href="#privacidade">Política de Privacidade (Fictício)</a>
+        </nav>
+    </footer>
+    <!-- Fim do Rodapé da Página -->
+
+    <!-- Scripts JavaScript do Bootstrap (via CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    
+    <!-- Nosso arquivo JavaScript customizado (se houver scripts específicos para esta página) -->
+    <script src="scripts.js"></script> 
+</body>
+</html>
